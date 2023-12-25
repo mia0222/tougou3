@@ -82,8 +82,13 @@
       // 他にも必要なだけ目標地点を追加
     ];
 
+    var targetMessages = [
+      "新潟職業能力開発短期大学校に近づきました！",
+      "目標地点2に近づきました！",
+      // 他にも必要なだけメッセージを追加
+    ];
     var currentTargetIndex = 0; // 現在の目標地点のインデックス
-    var proximityThreshold = 3000; // 近づいたと判断するしきい値（単位: メートル）
+    var proximityThreshold = 10; // 近づいたと判断するしきい値（単位: メートル）
 
     //距離計算
     function calculateDistance(lat1, lon1, lat2, lon2) {
@@ -133,7 +138,7 @@
 
      // 現在の場所が目標の場所に近づいたかどうかを確認
       if (isCloseToTargetLocation(latitude, longitude)) {
-        passMessageElement.innerText = "目標地点に近づきました！";
+        passMessageElement.innerText = targetMessages[currentTargetIndex];
         stopLocationTracking(); // 目標地点に到達したら位置情報のトラッキングを停止
 
         // 次の目標地点に切り替え（必要に応じて最初の目標に戻る処理を追加）
