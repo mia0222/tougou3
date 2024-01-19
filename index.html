@@ -127,7 +127,7 @@
 
         var distance = calculateDistance(lastLat, lastLng, currentLat, currentLng);
         totalDistance += distance; // 移動距離を累積
-        distanceElement.innerHTML = "移動距離: " + totalDistance.toFixed(2) + " メートル";
+        distanceElement.innerHTML = "移動距離: " + totalDistance.toFixed(2) + " メートル "+GeolocationCoordinates.speed+"m/s";
 
         // カロリー計算
         var weight = parseFloat(document.getElementById("weightInput").value); // ユーザーの体重
