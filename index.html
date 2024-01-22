@@ -28,7 +28,6 @@
   <div id="main">
     <p id="locationData">位置情報はここに表示されます.</p>
     <p id="distance">移動距離: 0 メートル</p>
-    <p id="speed">移動速度: 0 m/s</p>
     <p id="calories">消費カロリー: 0 kcal</p>
 
     <p>歩数: <span id="stepCount">0</span></p>
@@ -117,7 +116,7 @@
 
         var distance = calculateDistance(lastLat, lastLng, currentLat, currentLng);
         totalDistance += distance; // 移動距離を累積
-        distanceElement.innerHTML = "移動距離: " + totalDistance.toFixed(2) + " メートル " +speed.toFixed(2)+"m/h";
+        distanceElement.innerHTML = "移動距離: " + totalDistance.toFixed(2) + " メートル " +parseFloat(speed).toFixed(2)*3600+"m/h";
 
         // カロリー計算
         var weight = parseFloat(document.getElementById("weightInput").value); // ユーザーの体重
