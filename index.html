@@ -104,7 +104,7 @@
       var speed = position.coords.speed;
       var timestamp = new Date(position.timestamp).toLocaleString();
 
-      locationDataElement.innerHTML = "緯度: " + latitude + "<br>経度: " + longitude + "<br>精度: " + accuracy +
+      locationDataElement.innerHTML = "緯度: " + latitude.toFixed(7) + "<br>経度: " + longitude.toFixed(7) + "<br>精度: " + accuracy +
         " メートル<br>取得時刻: " + timestamp;
 
       // 移動距離を計算
@@ -116,7 +116,7 @@
 
         var distance = calculateDistance(lastLat, lastLng, currentLat, currentLng);
         totalDistance += distance; // 移動距離を累積
-        distanceElement.innerHTML = "移動距離: " + totalDistance.toFixed(2) + " メートル " +(parseFloat(speed).toFixed(7)*3600)/1000+"km/h";
+        distanceElement.innerHTML = "移動距離: " + totalDistance.toFixed(2) + " メートル " +(parseFloat(speed)*3600)/1000+"km/h";
 
         // カロリー計算
         var weight = parseFloat(document.getElementById("weightInput").value); // ユーザーの体重
