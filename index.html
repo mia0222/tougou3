@@ -67,7 +67,6 @@
   <script>
     var locationDataElement = document.getElementById("locationData");
     var distanceElement = document.getElementById("distance");
-    var speedElement = document.getElementById("speed");
     var caloriesElement = document.getElementById("calories");
     var startButton = document.getElementById("startButton");
     var stopButton = document.getElementById("stopButton");
@@ -118,8 +117,7 @@
 
         var distance = calculateDistance(lastLat, lastLng, currentLat, currentLng);
         totalDistance += distance; // 移動距離を累積
-        distanceElement.innerHTML = "移動距離: " + totalDistance.toFixed(2) + " メートル " +speed+"m/s";
-        speedElement.innerHTML = "移動速度: " + speed.toFixed(2) + " m/s ";
+        distanceElement.innerHTML = "移動距離: " + totalDistance.toFixed(2) + " メートル " +speed.toFixed(2)*3600+"m/h";
 
         // カロリー計算
         var weight = parseFloat(document.getElementById("weightInput").value); // ユーザーの体重
